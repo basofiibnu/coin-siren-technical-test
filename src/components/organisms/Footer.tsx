@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#FBFBFB]">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-        <Box className="container mx-auto py-16 flex flex-col gap-10 xl:max-w-[1200px]">
+        <Box className="container mx-auto px-4 xl:px-0 py-16 flex flex-col gap-10 xl:max-w-[1200px]">
           <Box className="flex xl:flex-row flex-col items-start xl:items-center gap-4">
             <Box className="flex flex-col gap-2 justify-start xl:flex-3">
               <Image src="/assets/footerlogo.svg" alt="logo" width={187} />
@@ -20,7 +20,7 @@ const Footer = () => {
               <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F]">aaaaa@naver.com</Paragraph>
             </Box>
 
-            <Box className="flex flex-wrap gap-4 items-center xl:flex-[7]">
+            <Box className="grid grid-cols-2 xl:flex xl:flex-wrap gap-4 items-center xl:flex-7">
               <FooterCard title="해외 개발자 원격 채용" caption="바로가기" icon="/assets/iconcode.svg" />
               <FooterCard title="외국인 원격 채용 (비개발)" caption="바로가기" icon="/assets/iconavatar.svg" />
               <FooterCard title="한국어 가능 외국인 채용" caption="바로가기" icon="/assets/iconkor.svg" />
@@ -29,7 +29,7 @@ const Footer = () => {
           </Box>
 
           <Box className="flex flex-col xl:flex-row items-start xl:items-center gap-8 xl:gap-4">
-            <Box className="flex flex-col xl:flex-row items-start xl:items-center gap-8 xl:gap-4 xl:flex-[3]">
+            <Box className="grid grid-cols-2 xl:flex xl:flex-row items-start xl:items-center gap-8 xl:gap-4 xl:flex-3">
               <Box className="flex flex-col gap-2 justify-start">
                 <Paragraph className="text-sm leading-[18px] font-black text-[#343741]">상호명</Paragraph>
                 <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-2">하이퍼하이어</Paragraph>
@@ -44,7 +44,7 @@ const Footer = () => {
               </Box>
             </Box>
 
-            <Box className="flex flex-col xl:flex-row gap-8 xl:gap-4 items-start xl:items-center xl:flex-[7]">
+            <Box className="flex flex-col xl:flex-row gap-8 xl:gap-8 items-start xl:items-center xl:flex-7">
               <Box className="flex flex-col gap-2 justify-start">
                 <Paragraph className="text-sm leading-[18px] font-black text-[#343741]">사업자등록번호 CIN</Paragraph>
                 <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-2">427-86-01187</Paragraph>
@@ -55,7 +55,7 @@ const Footer = () => {
                 <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-2">
                   서울특별시 강남대로 479, 지하 1층 238호{' '}
                 </Paragraph>
-                <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F]">
+                <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] max-w-[455px]">
                   D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India
                 </Paragraph>
               </Box>
@@ -63,7 +63,7 @@ const Footer = () => {
           </Box>
 
           <Box>
-            <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-4">ⓒ 2023 Hyperhire</Paragraph>
+            <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F]">ⓒ 2023 Hyperhire</Paragraph>
           </Box>
         </Box>
       </motion.div>

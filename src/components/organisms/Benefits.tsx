@@ -74,7 +74,9 @@ const Benefits = ({ data }: { data: { title: string; icon: string }[] }) => {
         </Box>
 
         <Box className="mt-3">
-          <Paragraph className="text-[#FBFF23] font-black text-base leading-6">개발자가 필요하신가요?</Paragraph>
+          <Paragraph className="text-[#FBFF23] font-black text-base leading-6 underline">
+            개발자가 필요하신가요?
+          </Paragraph>
         </Box>
       </Box>
     </motion.div>

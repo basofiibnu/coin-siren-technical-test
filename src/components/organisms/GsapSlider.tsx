@@ -22,10 +22,44 @@ const GSAPCoverflow = ({ members }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(1);
 
-  const SLIDE_WIDTH = 292;
-  const SCALE_ACTIVE = 1;
-  const SCALE_SIDE = 0.8;
-  const OFFSET = 130;
+  const [config, setConfig] = useState({
+    SLIDE_WIDTH: 292,
+    OFFSET: 120,
+    SCALE_ACTIVE: 1,
+    SCALE_SIDE: 0.9,
+  });
+
+  const handleResponsive = () => {
+    const width = window.innerWidth;
+
+    if (width < 640) {
+      setConfig({
+        SLIDE_WIDTH: 260,
+        OFFSET: 80,
+        SCALE_ACTIVE: 1,
+        SCALE_SIDE: 0.75,
+      });
+    } else if (width < 1024) {
+      setConfig({
+        SLIDE_WIDTH: 280,
+        OFFSET: 110,
+        SCALE_ACTIVE: 1,
+        SCALE_SIDE: 0.8,
+      });
+    } else {
+      setConfig({
+        SLIDE_WIDTH: 292,
+        OFFSET: 130,
+        SCALE_ACTIVE: 1,
+        SCALE_SIDE: 0.9,
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResponsive);
+    return () => window.removeEventListener('resize', handleResponsive);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -35,27 +69,21 @@ const GSAPCoverflow = ({ members }: Props) => {
 
     slides.forEach((slide, index) => {
       const position = index - active;
-
       const isCenter = position === 0;
 
       gsap.to(slide, {
         duration: 0.6,
-        x: position * OFFSET,
-        scale: isCenter ? SCALE_ACTIVE : SCALE_SIDE,
+        x: position * config.OFFSET,
+        scale: isCenter ? config.SCALE_ACTIVE : config.SCALE_SIDE,
         zIndex: isCenter ? 10 : 1,
         opacity: isCenter ? 1 : 0.8,
         ease: 'power3.out',
       });
     });
-  }, [active]);
+  }, [active, config]);
 
-  const next = () => {
-    setActive((prev) => (prev + 1) % members.length);
-  };
-
-  const prev = () => {
-    setActive((prev) => (prev - 1 + members.length) % members.length);
-  };
+  const next = () => setActive((prev) => (prev + 1) % members.length);
+  const prev = () => setActive((prev) => (prev - 1 + members.length) % members.length);
 
   return (
     <Box className="w-full flex flex-col items-center">
@@ -68,7 +96,7 @@ const GSAPCoverflow = ({ members }: Props) => {
       </Box>
 
       <Box className="relative flex items-center justify-center w-full overflow-hidden">
-        <button onClick={prev} className="absolute left-0 z-50 p-4">
+        <button onClick={prev} className="absolute left-0 xl:-left-4 z-50 p-4">
           <Image src="/assets/caret-right.svg" alt="caret-right" />
         </button>
 
@@ -76,12 +104,12 @@ const GSAPCoverflow = ({ members }: Props) => {
           ref={containerRef}
           className="relative h-[420px] flex justify-center items-center overflow-visible"
           style={{ width: '100%', maxWidth: '632px' }}>
-          {members.map((item, i: number) => (
+          {members.map((item, i) => (
             <Box
               key={i}
               className="absolute"
               style={{
-                width: `${SLIDE_WIDTH}px`,
+                width: `${config.SLIDE_WIDTH}px`,
                 left: '50%',
                 transform: 'translateX(-50%)',
               }}>
@@ -90,7 +118,7 @@ const GSAPCoverflow = ({ members }: Props) => {
           ))}
         </Box>
 
-        <button onClick={next} className="absolute right-0 z-50 p-4 rotate-180">
+        <button onClick={next} className="absolute right-0 xl:-right-4 z-50 p-4 rotate-180">
           <Image src="/assets/caret-right.svg" alt="caret-right" />
         </button>
       </Box>

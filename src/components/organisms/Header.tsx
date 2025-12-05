@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Box from '../atoms/Box';
 import Paragraph from '../atoms/Paragraph';
 import Image from '../atoms/Image';
@@ -68,6 +68,9 @@ const Header = () => {
             onClick={() => {}}>
             문의하기
           </Button>
+        </Box>
+        <Box className="md:hidden absolute top-2 right-5">
+          <div className="w-5 h-1.5 bg-white" />
         </Box>
       </Box>
     </header>

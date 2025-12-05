@@ -21,7 +21,7 @@ const Home = ({ data, benefits }: { data: MembersData; benefits: BenefitsData })
 
   return (
     <MainTemplate>
-      <Box className="my-10 flex flex-col gap-8">
+      <Box className="mb-0 mt-10 xl:my-10 flex flex-col gap-8">
         <Box className="flex flex-col xl:flex-row items-center justify-start gap-0">
           <Box className="w-full">
             <Hero />
@@ -31,7 +31,7 @@ const Home = ({ data, benefits }: { data: MembersData; benefits: BenefitsData })
           </Box>
         </Box>
 
-        <Box className="mt-8">
+        <Box className="mt-0 mb-16 xl:mt-8 xl:mb-0">
           <Benefits data={benefitData} />
         </Box>
       </Box>

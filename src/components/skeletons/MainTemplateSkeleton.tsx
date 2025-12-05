@@ -1,8 +1,8 @@
 import type React from 'react';
-import Footer from '../organisms/Footer';
-import Header from '../organisms/Header';
+import FooterSkeleton from './FooterSkeleton';
+import HeaderSkeleton from './HeaderSkeleton';
 
-const MainTemplate = ({ children }: { children: React.ReactNode }) => (
+const MainTemplateSkeleton = ({ children }: { children: React.ReactNode }) => (
   <div className="overflow-hidden">
     <div
       className="bg-cover bg-center"
@@ -10,12 +10,12 @@ const MainTemplate = ({ children }: { children: React.ReactNode }) => (
         backgroundImage: "url('/assets/background.png')",
       }}>
       <div className="container mx-auto pb-0 xl:pb-4 p-4 pt-0 xl:px-0 xl:pt-0 xl:max-w-[1200px]">
-        <Header />
+        <HeaderSkeleton />
         <main>{children}</main>
       </div>
     </div>
-    <Footer />
+    <FooterSkeleton />
   </div>
 );
 
-export default MainTemplate;
+export default MainTemplateSkeleton;

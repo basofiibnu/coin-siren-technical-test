@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Homepage, { type MembersData, type BenefitsData } from './components/pages/Home';
+import HomepageSkeleton from './components/skeletons/HomepageSkeleton';
 
 function Home() {
   const [members, setMembers] = useState<MembersData | null>(null);
@@ -33,7 +34,7 @@ function Home() {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <HomepageSkeleton />;
   if (error || !members || !benefits) return <div>{error}</div>;
 
   return <Homepage data={members} benefits={benefits} />;
