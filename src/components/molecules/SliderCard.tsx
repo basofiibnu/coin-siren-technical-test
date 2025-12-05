@@ -1,4 +1,3 @@
-import React from 'react';
 import Box from '../atoms/Box';
 import Image from '../atoms/Image';
 import Paragraph from '../atoms/Paragraph';
