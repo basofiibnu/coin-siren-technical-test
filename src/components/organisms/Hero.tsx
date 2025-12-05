@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import Box from '../atoms/Box';
 import Paragraph from '../atoms/Paragraph';
@@ -28,10 +27,10 @@ const Hero = () => {
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <Box>
-          <Heading className="text-[18px] xl:text-[24px] text-white font-black leading-[34px]">
+          <Heading className="text-[18px] xl:text-[24px] text-white/90 font-black leading-[34px]">
             법률 및 인사관리 부담없이
           </Heading>
-          <Heading className="text-[18px] xl:text-[24px] text-white font-black leading-[34px]">
+          <Heading className="text-[18px] xl:text-[24px] text-white/90 font-black leading-[34px]">
             1주일 이내에 원격으로 채용해보세요.
           </Heading>
         </Box>

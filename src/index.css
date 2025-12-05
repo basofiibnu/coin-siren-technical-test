@@ -45,32 +45,35 @@ h1 {
   border-color: #e9f7ef transparent transparent transparent;
 }
 
-.swiper-container {
-  width: 800px;
+.swiper-navigation-icon {
+  color: #fff;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: 880px; /* center width for 3-card layout */
   margin: 0 auto;
 }
 
-@media screen and (max-width: 800px) {
-  .swiper-container {
-    width: 640px;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 540px) {
-  .swiper-container {
-    width: 400px;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 375px) {
-  .swiper-container {
-    width: 320px;
-    margin: 0 auto;
-  }
+.swiper-slide-member {
+  display: flex;
+  justify-content: center; /* centers the card inside the slide */
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  color: #fff;
-  font-size: 32px !important;
+/* tighten/center navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0f0f0f;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: -10px;
+}
+
+.swiper-button-next {
+  right: -10px;
 }

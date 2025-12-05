@@ -22,11 +22,11 @@ const Home = ({ data, benefits }: { data: MembersData; benefits: BenefitsData })
   return (
     <MainTemplate>
       <Box className="my-10 flex flex-col gap-8">
-        <Box className="flex flex-col xl:flex-row items-center justify-start gap-2">
+        <Box className="flex flex-col xl:flex-row items-center justify-start gap-0">
           <Box className="w-full">
             <Hero />
           </Box>
-          <Box className="w-full">
+          <Box className="w-full xl:max-w-[632px]">
             <Slider members={members} />
           </Box>
         </Box>

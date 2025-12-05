@@ -7,11 +7,11 @@ import Image from '../atoms/Image';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FBFBFB] xl:pl-[150px]">
+    <footer className="bg-[#FBFBFB]">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-        <Box className="container mx-auto p-4 py-16 flex flex-col gap-10">
+        <Box className="container mx-auto py-16 flex flex-col gap-10 xl:max-w-[1200px]">
           <Box className="flex xl:flex-row flex-col items-start xl:items-center gap-4">
-            <Box className="flex flex-col gap-2 justify-start xl:flex-[3]">
+            <Box className="flex flex-col gap-2 justify-start xl:flex-3">
               <Image src="/assets/footerlogo.svg" alt="logo" width={187} />
               <Paragraph className="text-sm leading-5 font-black text-[#343741] max-w-[247px] mt-2">
                 우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
